@@ -18,6 +18,16 @@ Welcome to my repository! My name is **Rotich Kibet**, and I am a passionate **d
 - **Level**: Intermediate
 - **Description**: This is an extension of the World Bank data analysis, zooming in on Kenya. It includes advanced data preprocessing, time-series analysis, correlation studies, and visualization of various indicators such as GDP, population growth, and life expectancy.
 
+### **4. Email Priority Classifier**
+- **Level**: Intermediate
+- **File**: `email_priority_classifier.ipynb`
+- **Description**: Adapted from the SMS Spam dataset, this project focuses on classifying emails based on priority. It covers data preprocessing, feature extraction, and building a machine learning model to distinguish between high-priority and normal emails.
+
+### **5. Enron Email Classifier**
+- **Level**: Advanced
+- **File**: `Enron_Email_dataset.ipynb`
+- **Description**: Utilizing the Enron Email dataset, this project aims to classify emails based on their importance. It involves advanced feature engineering, metadata analysis, and machine learning techniques to achieve accurate classification.
+
 ---
 
 ## 🚀 What’s Coming Next?
@@ -50,3 +60,5 @@ Clone this repository and install the necessary dependencies:
 git clone https://github.com/Kibet-Rotich/Data-analysis-ML-AI.git
 cd Data-analysis-ML-AI
 pip install -r requirements.txt
+```
+
