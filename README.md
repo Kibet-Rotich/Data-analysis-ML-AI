@@ -1,64 +1,126 @@
-# Data Science, AI, and ML Projects Repository
+# 📦 Data Science, AI, and ML Projects
 
-Welcome to my repository! My name is **Rotich Kibet**, and I am a passionate **data scientist**. This repository contains a collection of projects I am working on, ranging from beginner-level datasets to more advanced data analysis and machine learning tasks. Below is an overview of the current projects and what's to come.
-
----
-
-## 📂 Projects Overview
-
-### **1. Titanic Survival Analysis**
-- **Level**: Beginner
-- **Description**: This notebook demonstrates basic data exploration, visualization, and modeling using the classic Titanic dataset. It’s ideal for beginners looking to understand the fundamentals of data analysis and machine learning.
-
-### **2. World Bank Data Analysis**
-- **Level**: Intermediate
-- **Description**: Focused on data cleaning, aggregation, and in-depth analysis of World Bank data. Key highlights include filtering and visualizing global military expenditure trends over time.
-
-### **3. Kenya Economic and Social Indicators**
-- **Level**: Intermediate
-- **Description**: This is an extension of the World Bank data analysis, zooming in on Kenya. It includes advanced data preprocessing, time-series analysis, correlation studies, and visualization of various indicators such as GDP, population growth, and life expectancy.
-
-### **4. Email Priority Classifier**
-- **Level**: Intermediate
-- **File**: `email_priority_classifier.ipynb`
-- **Description**: Adapted from the SMS Spam dataset, this project focuses on classifying emails based on priority. It covers data preprocessing, feature extraction, and building a machine learning model to distinguish between high-priority and normal emails.
-
-### **5. Enron Email Classifier**
-- **Level**: Advanced
-- **File**: `Enron_Email_dataset.ipynb`
-- **Description**: Utilizing the Enron Email dataset, this project aims to classify emails based on their importance. It involves advanced feature engineering, metadata analysis, and machine learning techniques to achieve accurate classification.
+Welcome! I'm **Rotich Kibet**, a passionate **data scientist** and **machine learning engineer**. This repository showcases a variety of end-to-end projects across natural language processing (NLP), machine learning (ML), and real-world data analysis — all developed with a focus on clean pipelines, clarity, and reproducibility.
 
 ---
 
-## 🚀 What’s Coming Next?
+## 🔌 Deployed Machine Learning APIs
 
-Stay tuned for exciting projects in:
-- **Machine Learning**: Predictive modeling, classification, and regression tasks.
-- **Computer Vision**: Image recognition and processing.
-- **Natural Language Processing**: Sentiment analysis, text summarization, and more.
+### 📧 Enron Email Priority Classification
+A machine learning pipeline trained on the Enron Email dataset to classify corporate emails as **"high"** or **"normal"** priority using content, metadata, and keyword signals.
+
+- RESTful API built with Flask and documented with Swagger (Flask-RESTX)
+- Feature extraction includes subject line parsing, sender metadata, and content vectors
+- Model testing and exploration available in the accompanying Jupyter notebook
+
+📂 Folder: `email_priority_api/`  
+📓 Notebook: `Enron_Email_dataset.ipynb`
 
 ---
 
-## 🤝 Get in Touch
+### 🚨 Spam Email Detection
+Detects spam messages using the SMS Spam Collection dataset. Includes data preprocessing, TF-IDF vectorization, and a Random Forest model deployed via a Flask API.
 
-If you have any questions, feedback, or collaboration ideas, feel free to reach out:
-- **LinkedIn**: [Rotich Kibet](https://www.linkedin.com/in/rotichkibet/)
-- **GitHub**: [Kibet-Rotich](https://github.com/Kibet-Rotich)
+- Swagger UI for testing and client consumption
+- Model serialization and consistent inference using joblib
+- API mirrors model tested in the associated notebook
+
+📂 Folder: `spam classification/`  
+📓 Notebook: `Email_Priority_classifier.ipynb`
+
+---
+
+## 📊 Data Analysis Projects
+
+### 🌍 Kenya Economic and Social Indicators
+In-depth exploration of Kenya’s development trends using World Bank data.
+
+- Time-series visualizations and correlation analysis
+- Focused on GDP, life expectancy, population, and economic indicators
+- Cleaned and reshaped datasets for interactive analysis
+
+📓 File: `Kenya.ipynb`
+
+---
+
+### 🌐 World Bank Global Data Analysis
+Data cleaning, filtering, and global-level analytics using World Bank datasets.
+
+- Visualizes trends in global military expenditure
+- Includes data wrangling techniques and aggregate analysis
+
+📓 File: `Worldbank_data.ipynb`
+
+---
+
+## 🤖 Machine Learning Projects
+
+### 📨 Enron Email Classifier
+A machine learning model for classifying Enron emails by importance.
+
+- Advanced feature engineering using email headers, sender tags, and message content
+- Built to distinguish high-importance internal communication from general email flow
+
+📓 File: `Enron_Email_dataset.ipynb`
+
+---
+
+### 📨 Email Priority Classifier (SMS-Based)
+Adapted from the SMS Spam dataset to classify messages as **"Urgent"** or **"Regular"**.
+
+- Covers full ML pipeline: text cleaning, vectorization, training, and prediction
+- Includes notebook-based model evaluation and examples
+
+📓 File: `Email_Priority_classifier.ipynb`
+
+---
+
+## 🚢 Exploratory & Foundational Projects
+
+### 🚢 Titanic Survival Analysis
+A classic ML problem revisited with modern techniques.
+
+- Exploratory Data Analysis (EDA), visualization, and logistic regression
+- Preprocessing steps include handling missing data and encoding
+
+📓 File: `Titanic.ipynb`
+
+---
+
+## 🧪 Neural Network Sandbox
+A space for building and experimenting with neural networks from scratch.
+
+- Testing activation functions, backpropagation, and weight updates
+- Good ground for deeper DL understanding and experimentation
+
+📂 Folder: `Neural Networks/`
+
+---
+
+## 🚀 What's Coming
+
+Stay tuned for upcoming projects in:
+- **Computer Vision**: Object detection and image classification  
+- **Advanced NLP**: Summarization, topic modeling, sentiment classification  
+- **MLOps**: Model monitoring, CI/CD for ML pipelines
 
 ---
 
 ## 📖 How to Use
 
 ### Requirements
-To run the notebooks, you will need:
-- **Python**: Version 3.8 or higher
-- Libraries: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `openpyxl`
+- **Python** 3.8+
+- Core packages: `pandas`, `numpy`, `scikit-learn`, `nltk`, `flask`, `flask-restx`, `joblib`, `matplotlib`, `seaborn`
 
-### Installation
-Clone this repository and install the necessary dependencies:
+### Setup Instructions
 ```bash
 git clone https://github.com/Kibet-Rotich/Data-analysis-ML-AI.git
 cd Data-analysis-ML-AI
 pip install -r requirements.txt
 ```
 
+### 🤝 Connect With Me
+- **LinkedIn**: [Rotich Kibet](https://www.linkedin.com/in/rotichkibet/)
+- **GitHub**: [Kibet-Rotich](https://github.com/Kibet-Rotich)
+
+Thank you for visiting! Feel free to open issues, suggest improvements, or collaborate.
