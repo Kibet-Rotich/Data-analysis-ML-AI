@@ -1,30 +1,41 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
+from flask_restx import Api, Resource, fields
 import joblib
-import os
 
 app = Flask(__name__)
+api = Api(app, title="Spam Email Classifier API", version="1.0", description="Classifies SMS/email messages as spam or ham")
 
-# Load model artifacts
+# Namespace
+ns = api.namespace('spam', description='Spam Classification Operations')
+
+# Input model (Swagger docs)
+message_model = api.model('Message', {
+    'message': fields.String(required=True, description='Email or SMS text')
+})
+
+# Load components
 model = joblib.load('model/spam_classifier.joblib')
 vectorizer = joblib.load('model/tfidf_vectorizer.joblib')
 encoder = joblib.load('model/label_encoder.joblib')
 
+# Preprocessing function
 def clean_text(text):
     text = text.lower()
-    return ''.join([char for char in text if char.isalnum() or char.isspace()])
+    return ''.join([c for c in text if c.isalnum() or c.isspace()])
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    data = request.json
-    if 'message' not in data:
-        return jsonify({'error': 'Missing "message" field'}), 400
-
-    cleaned = clean_text(data['message'])
-    vectorized = vectorizer.transform([cleaned])
-    prediction = model.predict(vectorized)[0]
-    label = encoder.inverse_transform([prediction])[0]
-
-    return jsonify({'label': label})
+# Endpoint
+@ns.route('/predict')
+class SpamClassifier(Resource):
+    @ns.doc('predict_spam')
+    @ns.expect(message_model)
+    def post(self):
+        """Classify message as spam or ham"""
+        data = request.json
+        text = clean_text(data['message'])
+        vectorized = vectorizer.transform([text])
+        prediction = model.predict(vectorized)[0]
+        label = encoder.inverse_transform([prediction])[0]
+        return {'label': label}, 200
 
 if __name__ == '__main__':
     app.run(debug=True)
